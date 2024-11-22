@@ -1,4 +1,5 @@
 ![we](https://github.com/user-attachments/assets/57b9c030-6e8f-4b56-a989-6ec972f7aeca)
+Youtube: https://youtu.be/jlBEmCCY-iM
 Bu proje, temel oyun mekaniği ve fizik sistemlerini öğrenmeyi amaçlayan bir etkileşimli 3D uygulamadır. Proje, oyuncuların sahnede yer alan nesneleri seçip hareket ettirerek bir hedef alana yerleştirmelerini sağlar.
 
 Projenin Hedefleri:
