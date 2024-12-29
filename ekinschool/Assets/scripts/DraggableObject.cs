@@ -23,6 +23,7 @@ public class DraggableObject : MonoBehaviour
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody>();
         fallposition = transform.position;
+
     }
     void Update()
     {
@@ -83,12 +84,9 @@ public class DraggableObject : MonoBehaviour
                 _sp.ScoreText.text = "Score:" + _sp.Score;
                 
                 // tüm meyveler eşleştirilirse tebrikler paneli açılıyor
-                
-                if (_sp.Fruits.childCount == 0)
-                {
-                    _sp.ComplatePanel.SetActive(true);
-                }
-                
+                _sp.FruitsCountsText.text ="Fruit Count: "+ (_sp.Fruits.childCount - 2).ToString();
+
+
             }
             // eşleştirme yanlış ise geri dönmesi için altaki elseif bloğu çalışarak update deki kodu tetikliyor
             else if (_sp.CurrentFruit != this && _sp.CurrentFruit.FruitName != this.FruitName)
@@ -102,6 +100,10 @@ public class DraggableObject : MonoBehaviour
         if (other.transform.name == "Destory Trigger Area")
         {
             Destroy(this.gameObject);
+            if (_sp.Fruits.childCount <= 1)
+            {
+                _sp.ComplatePanel.SetActive(true);
+            }
         }
         
         /// yanlışlıkla meyve uzay'ın bir yerine fırlatılırsa objenin meyvelerin durdukları yerde beklemeleri sağlanıyor.
